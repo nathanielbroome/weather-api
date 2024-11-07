@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Project</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css" >
+
+</head>
+<body>
+
+    <div class="container">
+
+       
+        <div id="page-name" class="center">
+            <h3>Local Weather</h3>   
+            <p style="color: #9BBEC8;"><%= city %>, <%= state %></p>
+        </div>
+        <div id="weather">
+            <% if (data && data.length > 0) { %>
+            
+            <div id="weather-name">
+                <h1 style="color: #42BFEC;"><%=data[0].name%></h1>
+            </div>
+            <div id="temperature" class="color">
+                <p class="temp color"><%=data[0].temperature%><%=data[0].temperatureUnit%>  </p>
+            </div>
+            
+            <div class="rain background-image icon" style="background-image: url(<%=images[0]%>)">
+
+                <% if (data[0].probabilityOfPrecipitation && data[0].probabilityOfPrecipitation.value !== null) { %>
+                    <%= data[0].probabilityOfPrecipitation.value %>%
+                <% } %>
+            </div>
+            
+            <div id="detailed-forecast">
+                <p class="color"><%=data[0].detailedForecast%></p>
+            </div>
+        </div>
+        <div class="first-row"> 
+            <% for (let i = 2; i < 8; i++) { %> 
+                <div class="items"> 
+                    <p class="name color"><%= data[i].name %></p>
+                    <p class="temp color"><%= data[i].temperature %><%= data[i].temperatureUnit %></p> 
+                    <p class="rain background-image icon" style="background-image: url('<%= images[i] %>')"> 
+                        <% if (data[i].probabilityOfPrecipitation && data[i].probabilityOfPrecipitation.value !== null) { %> 
+                            <%= data[i].probabilityOfPrecipitation.value %>% 
+                        <% } %> 
+                    </p> 
+                </div> 
+            <% } %>
+             
+        </div>
+        <div class="second-row"> 
+            <% for (let j = 8; j < 14; j++) { %> 
+                <div class="items"> 
+                    <p class="name color"><%= data[j].name %></p>
+                    <p class="temp color"><%= data[j].temperature %><%= data[j].temperatureUnit %></p> 
+                    <p class="rain background-image icon" style="background-image: url('<%= images[j] %>')"> 
+                        <% if (data[j].probabilityOfPrecipitation && data[j].probabilityOfPrecipitation.value !== null) { %> 
+                            <%= data[j].probabilityOfPrecipitation.value %>% 
+                        <% } %> 
+                    </p> 
+                </div> 
+            <% } %> 
+        </div> 
+        <% } else { %> 
+            <p>No weather data available.</p> 
+        <% } %> 
+            
+        
+        <div class="footer">
+            <ul>
+            <li>Nathaniel Broome &copy; 2024</li>
+            <li><a href="https://www.freepik.com/free-vector/weather-icons-collection_972339.htm#query=weather%20icons%20set&position=11&from_view=keyword&track=ais_hybrid&uuid=e9071b54-1288-4fe0-9b79-87d8ffb574c0">Icon credit</a></li>
+            
+            </ul>   
+        </div>
+    </div>
+        
+</body>
+</html>

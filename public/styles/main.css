@@ -1,0 +1,184 @@
+body {
+    font-family: "Rasa";
+    font-size: 18px; 
+    padding: 50px;
+    margin: 0;
+    background-color: #164863;
+}
+
+h1 {
+    font-family: "Merriweather";
+    color: #9BBEC8;
+    
+}
+
+h2, h3 {
+font-family: "Cormorant";
+color: #9BBEC8;
+ 
+}
+
+.container {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #DDF2FD;
+}
+
+
+#page-name {
+    width: auto;
+    display: block;
+    padding: 10px;
+    background-color: #427D9D;
+    border-bottom: 1px solid #9BBEC8;
+}
+
+#weather {
+    height: 50vh;
+    display: block; 
+}
+
+#weather-name > h1  {
+    text-align: center;
+}
+
+#detailed-forecast {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.background-image {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+.rain {
+    width: 100px;
+    height: 80px;
+    text-align: right;
+    align-content: flex-end;
+    font-weight: bold;
+    color: #42BFEC;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+
+
+
+.first-row, .second-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.items {  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #9BBEC8;
+}
+
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.temp {
+    text-align: center;
+}
+
+.color {
+    color: #42BFEC;
+
+}
+
+.center {
+    text-align: center;
+}
+ 
+
+.footer {
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    height: 50px;
+    background-color: #427D9D;
+}
+
+.footer > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    color: #9BBEC8; 
+    width: 100%;
+}
+
+.footer > ul > li {
+       text-decoration: none;
+}
+
+.footer > ul > li > a {
+    text-decoration: none;
+    color: #9BBEC8;
+}
+
+@media screen and (max-width: 499px) {
+    .first-row, .second-row {
+        flex-wrap: wrap;
+    }
+    .items {
+      width: 100%;
+      display: flex;
+    }
+  }
+
+@media screen and (min-width: 500px) {
+
+    .first-row, .second-row {
+        flex-wrap: wrap;
+    }
+    .items {
+      width: 40%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+
+    .first-row, .second-row {
+        flex-wrap: nowrap;
+    } 
+    .items {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
