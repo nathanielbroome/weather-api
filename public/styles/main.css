@@ -132,6 +132,7 @@ color: #9BBEC8;
 
 .footer > ul {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -141,17 +142,29 @@ color: #9BBEC8;
 }
 
 .footer > ul > li {
-       text-decoration: none;
+    text-decoration: none; 
+    flex: 1;
 }
 
 .footer > ul > li > a {
     text-decoration: none;
     color: #9BBEC8;
+    flex: 1;
 }
 
 @media screen and (max-width: 400px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
     .container {
-        width: 90%;
+        width: 100%;
+    }
+    #weather {
+        height: auto;
+    }
+    #weather-name {
+        font-size: 1rem;
     }
 }
 
