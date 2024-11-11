@@ -169,6 +169,9 @@ color: #9BBEC8;
 }
 
 @media screen and (max-width: 499px) {
+    #weather {
+        height: auto;
+    }
     .first-row, .second-row {
         flex-wrap: wrap;
     }
@@ -179,7 +182,9 @@ color: #9BBEC8;
   }
 
 @media screen and (min-width: 500px) {
-
+    #weather {
+        height: auto;
+    }
     .first-row, .second-row {
         flex-wrap: wrap;
     }
@@ -191,7 +196,9 @@ color: #9BBEC8;
   }
 
   @media screen and (min-width: 990px) {
-
+      #weather {
+        height: auto;
+    }
     .first-row, .second-row {
         flex-wrap: nowrap;
     } 
